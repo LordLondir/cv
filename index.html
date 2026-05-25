@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive CV - Dominik Rathouský</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'slate': {
+                            850: '#172033',
+                            950: '#0b111e'
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'spin': 'spin 1s linear infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        spin: {
+                            from: { transform: 'rotate(0deg)' },
+                            to: { transform: 'rotate(360deg)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .no-print {
+                display: none !important;
+            }
+            main {
+                box-shadow: none !important;
+                border: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            body, main, div, section, h1, h2, h3, p, span, li {
+                background-color: white !important;
+                color: black !important;
+            }
+            a {
+                text-decoration: none;
+                color: black !important;
+            }
+        }
+
+        /* Styles for PDF Generation */
+        .pdf-generation-mode {
+            background: white !important;
+        }
+        .pdf-generation-mode main {
+            box-shadow: none !important;
+            border: none !important;
+            margin: 0 !important;
+            max-width: 100% !important;
+            padding: 2.5rem !important; 
+            border-radius: 0 !important;
+        }
+        .pdf-generation-mode *,
+        .pdf-generation-mode *::before,
+        .pdf-generation-mode *::after {
+            background-color: transparent !important;
+            color: #1e293b !important; /* slate-800 */
+            border-color: #e2e8f0 !important; /* slate-200 */
+        }
+        .pdf-generation-mode a { text-decoration: none; }
+        .pdf-generation-mode .text-sky-600, .pdf-generation-mode .dark\:text-sky-400 { color: #0284c7 !important; }
+        .pdf-generation-mode .bg-sky-500 { background-color: #0ea5e9 !important; }
+        .pdf-generation-mode .dark\:ring-slate-900, .pdf-generation-mode .ring-white { --tw-ring-color: #ffffff !important; }
+        .pdf-generation-mode .dark\:border-slate-900 { border-color: #e2e8f0 !important; }
+        
+        .experience-item, .section-container {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "jspdf": "https://esm.sh/jspdf@^2.5.1",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-100 dark:bg-slate-950 transition-colors duration-300 font-sans">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
